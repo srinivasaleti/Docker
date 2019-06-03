@@ -17,3 +17,9 @@ services:
       - '8080:80'
     depends_on: 
       - back-end
+  front-end-test:
+    container_name: front-end-test
+    build: 
+      context: simple-react/
+      dockerfile: Dockerfile.dev
+    command: ["npm","run","test"]
