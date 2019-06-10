@@ -1,4 +1,4 @@
-FROM node:12.2.0-alpine as build
+FROM node:alpine as build
 WORKDIR /usr/src
 
 COPY package.json .
@@ -8,6 +8,6 @@ COPY . .
 RUN npm run build
 
 # production environment
-FROM nginx:1.16.0-alpine
+FROM nginx
 EXPOSE 80
 COPY --from=build /usr/src/build /usr/share/nginx/html
