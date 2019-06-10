@@ -2,6 +2,4 @@ sudo : required
 services:
  - docker
 before_install:
-  - docker build -t srinivasaleti/frontend -f ./simple-react/Dockerfile.dev ./simple-react
-script:
-  - docker run srinivasaleti/frontend npm run test -- --coverage
+  - docker build -t srinivasaleti/frontend -f ./simple-react/Dockerfile.prod ./simple-react
